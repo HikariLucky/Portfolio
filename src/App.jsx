@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp, FaReact, FaNodeJs } from 'react-icons/fa'
+import { FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp, FaReact, FaNodeJs, FaPython, FaDatabase } from 'react-icons/fa'
 import { FaDartLang } from 'react-icons/fa6'
 
 function App() {
@@ -80,7 +80,7 @@ function App() {
                     <div className="absolute top-72 left-10 w-4 h-4 bg-teal-400 rounded-full opacity-70"></div>
 
                     <div className="flex flex-col md:flex-row items-center gap-8 z-10">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&auto=format&fit=crop&q=80" alt="Profile" className="w-96 h-96 rounded-full object-cover border-4 border-blue-400 shadow-lg ml-40" />
+                        <img src="/profile.jpeg" alt="Profile" className="w-96 h-96 rounded-full object-cover border-4 border-blue-400 shadow-lg ml-40" />
                         <div className="text-center md:text-left md:pl-24 mt-3">
                             <p className="text-3xl mb-2">Olá, meu nome é</p>
                             <h1 className="text-8xl md:text-6xl font-bold text-blue-400">Kauã Oliveira</h1>
@@ -113,7 +113,7 @@ function App() {
                     </div>
                 </section>
 
-                <section id="projects" className="min-h-screen w-full bg-gray-900 text-white">
+                <section id="projects" className="min-h-screen w-full bg-gray-800 text-white">
                     <div className="max-w-7xl mx-auto px-4 py-20">
                         <h1 className="text-6xl font-bold mb-4 flex justify-center items-center">Projects</h1>
                         <div className="w-32 h-1 bg-blue-500 mx-auto mb-8 rounded-full"></div>
@@ -142,6 +142,31 @@ function App() {
                                 <h3 className="font-semibold mb-2">Em Breve!</h3>
                                 <p className="text-gray-300 text-sm mb-4">Descrição do projeto aqui</p>
                                 <a href="#" className="text-blue-400 hover:underline text-sm">Ver projeto →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" className="min-h-screen w-full bg-gray-900 text-white">
+                    <div className="max-w-7xl mx-auto px-4 py-20">
+                        <h1 className="text-6xl font-bold mb-4 flex justify-center items-center">Skills</h1>
+                        <div className="w-32 h-1 bg-blue-500 mx-auto mb-8 rounded-full"></div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className='bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                                <FaReact className='text-blue-400 text-4xl mb-2'/>
+                                <h4 className='text-lg'>React + JavaScript</h4>
+                            </div>
+                            <div className='bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                                <FaPython className='text-yellow-400 text-4xl mb-2'/>
+                                <h4 className='text-lg'>Python</h4>
+                            </div>
+                            <div className='bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                                <FaNodeJs className='text-green-400 text-4xl mb-2'/>
+                                <h4 className='text-lg'>Node.js</h4>
+                            </div>
+                            <div className='bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                                <FaDatabase className='text-red-400 text-4xl mb-2'/>
+                                <h4 className='text-lg'>MySql</h4>
                             </div>
                         </div>
                     </div>
