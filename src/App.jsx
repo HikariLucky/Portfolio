@@ -513,7 +513,7 @@ function App() {
                                 >
                                     <div className="text-blue-400 text-2xl mb-2 flex justify-center"><FaLinkedin /></div>
                                     <h3 className="font-semibold mb-1">LinkedIn</h3>
-                                    <p className="text-gray-300">in/kauã-oliveira</p>
+                                    <p className="text-gray-300">in/kauã-oliveira-43b07b268</p>
                                 </motion.div>
                                 <motion.div 
                                     className="bg-gray-700 p-6 rounded-lg text-center"
