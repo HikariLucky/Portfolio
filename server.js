@@ -1,17 +1,20 @@
 import express from 'express'
 import cors from 'cors'
 import nodemailer from 'nodemailer'
+import { JSDOM } from 'jsdom'
+import createDOMPurify from 'dompurify'
 
 const app = express()
 const PORT = 3001
 
+
+const window = new JSDOM('').window
+const DOMPurify = createDOMPurify(window)
+
 app.use(cors())
 app.use(express.json())
 
-// IMPORTANTE: Use SENHA DE APP do Gmail, não sua senha normal!
-// 1. Ative autenticação de 2 fatores: https://myaccount.google.com/signinoptions/two-step-verification
-// 2. Gere senha de app: https://myaccount.google.com/apppasswords
-// 3. Substitua abaixo pela senha de app (16 caracteres)
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -21,15 +24,20 @@ const transporter = nodemailer.createTransport({
 })
 
 app.post('/api/contact', async (req, res) => {
-    const { name, email, message } = req.body
+    let { name, email, message } = req.body
 
     if (!name || !email || !message) {
         return res.status(400).json({ error: 'Todos os campos são obrigatórios' })
     }
 
+    name = DOMPurify.sanitize(name)
+    email = DOMPurify.sanitize(email)
+    message = DOMPurify.sanitize(message)
+
     try {
         await transporter.sendMail({
-            from: email,
+            from: process.env.EMAIL_USER || 'kauaojulio10@gmail.com',
+            replyTo: email,
             to: 'vx.hikari_yt16@hotmail.com',
             subject: `Nova mensagem de ${name}`,
             text: `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`,
